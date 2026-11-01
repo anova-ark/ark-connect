@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="style.css?v=3.6">
 </head>
 <body>
   <!-- Ambient background glow effects -->
@@ -73,7 +73,7 @@
     <div class="cards-grid">
       
       <!-- Card 1: Steam (Favoritos) - DESTAQUE PRINCIPAL -->
-      <div class="card card-hero">
+      <div class="card card-hero ticket-card">
         <div class="card-badge">STEAM (RECOMENDADO)</div>
         <div class="card-header">
           <div class="card-icon steam-icon">
@@ -85,6 +85,12 @@
             <h3 class="card-title" id="txtSteamTitle">Steam</h3>
             <p class="card-subtitle" id="txtSteamSub">Favoritos da Steam (QueryPort)</p>
           </div>
+        </div>
+
+        <!-- Ticket Cut Divider -->
+        <div class="ticket-divider">
+          <span class="notch notch-left"></span>
+          <span class="notch notch-right"></span>
         </div>
 
         <div class="card-body">
@@ -107,14 +113,19 @@
             <span>🚀 Abrir via Steam (1-Clique)</span>
           </a>
 
-          <span class="card-footer-note" id="lblSteamNote">
-            📌 No ARK: Selecione filtro <strong>Favoritos</strong> para entrar.
-          </span>
+          <div class="ticket-footer-row">
+            <span class="card-footer-note" id="lblSteamNote">
+              📌 No ARK: Selecione filtro <strong>Favoritos</strong> para entrar.
+            </span>
+            <div class="mini-barcode" aria-hidden="true" title="SURVIVOR PASS">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Card 2: Epic Games (Console In-Game TAB) -->
-      <div class="card">
+      <div class="card ticket-card">
         <div class="card-badge epic-badge">EPIC GAMES</div>
         <div class="card-header">
           <div class="card-icon epic-icon">
@@ -126,6 +137,12 @@
             <h3 class="card-title" id="txtEpicTitle">Epic Games</h3>
             <p class="card-subtitle" id="txtEpicSub">Conexão via Console no Jogo</p>
           </div>
+        </div>
+
+        <!-- Ticket Cut Divider -->
+        <div class="ticket-divider">
+          <span class="notch notch-left"></span>
+          <span class="notch notch-right"></span>
         </div>
 
         <div class="card-body">
@@ -144,14 +161,19 @@
             </div>
           </div>
 
-          <span class="card-footer-note" id="lblEpicPort">
-            🎮 Porta de Jogo: 7777 (Exclusivo Epic)
-          </span>
+          <div class="ticket-footer-row">
+            <span class="card-footer-note" id="lblEpicPort">
+              🎮 Porta de Jogo: 7777 (Exclusivo Epic)
+            </span>
+            <div class="mini-barcode" aria-hidden="true" title="SURVIVOR PASS">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Card 3: Discord & Suporte -->
-      <div class="card card-community">
+      <div class="card card-community ticket-card">
         <div class="card-badge discord-badge">COMUNIDADE</div>
         <div class="card-header">
           <div class="card-icon discord-icon">
@@ -163,6 +185,12 @@
             <h3 class="card-title" id="txtDiscordTitle">Discord Oficial</h3>
             <p class="card-subtitle" id="txtDiscordSub">Suporte, Kits e Registro</p>
           </div>
+        </div>
+
+        <!-- Ticket Cut Divider -->
+        <div class="ticket-divider">
+          <span class="notch notch-left"></span>
+          <span class="notch notch-right"></span>
         </div>
 
         <div class="card-body">
@@ -180,6 +208,13 @@
               <line x1="10" y1="14" x2="21" y2="3"></line>
             </svg>
           </a>
+
+          <div class="ticket-footer-row">
+            <span class="card-footer-note">🎁 VIP STARTER PASS</span>
+            <div class="mini-barcode" aria-hidden="true" title="SURVIVOR PASS">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
         </div>
       </div>
 
