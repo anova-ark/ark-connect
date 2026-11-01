@@ -1,13 +1,13 @@
 /**
  * ANOVA ARK CLUSTER — CONEXÃO RÁPIDA & PORTAL GITHUB PAGES
- * Gerenciador de conexão simplificado via console in-game (Steam & Epic Games)
+ * Gerenciador focado em Favoritos da Steam (QueryPort) e Console Epic Games (GamePort)
  */
 
 // Configuração do Servidor
 const SERVERS = {
   server1: {
     id: "server1",
-    name: "ANOVA The Island",
+    name: "🏝️ ANOVA The Island",
     gamePort: 7777,
     queryPort: 27015
   }
@@ -20,31 +20,32 @@ const I18N = {
   pt: {
     clusterStatus: "SERVIDOR ONLINE",
     heroTitlePrefix: "CONECTAR AO",
+    heroSub: "Escolha sua plataforma para ingressar no servidor",
     steamTitle: "Steam",
-    steamSub: "Conexão via Console no Jogo",
+    steamSub: "Favoritos da Steam (QueryPort)",
     steamSteps: [
-      "Abra o ARK na Steam.",
-      "No menu principal ou em qualquer mapa, aperte a tecla <kbd>TAB</kbd>.",
-      "Cole o comando abaixo e aperte <kbd>ENTER</kbd>:"
+      "Na Steam: <strong>Exibir</strong> ➔ <strong>Servidores de Jogos</strong>.",
+      "Aba <strong>Favoritos</strong> ➔ clique no botão <strong>+</strong>.",
+      "Cole o endereço abaixo e salve:"
     ],
+    steamDirectBtn: "🚀 Abrir via Steam (1-Clique)",
+    steamNote: "📌 No ARK: Selecione filtro <strong>Favoritos</strong> para entrar.",
     epicTitle: "Epic Games",
     epicSub: "Conexão via Console no Jogo",
     epicSteps: [
       "Abra o ARK na Epic Games.",
-      "No menu principal ou em qualquer mapa, aperte a tecla <kbd>TAB</kbd>.",
+      "No menu principal ou jogo, aperte <kbd>TAB</kbd>.",
       "Cole o comando abaixo e aperte <kbd>ENTER</kbd>:"
     ],
-    favTitle: "Lista de Favoritos",
-    favSub: "Para ver sempre dentro do jogo",
-    favSteps: [
-      "Na Steam, clique em <strong>Exibir</strong> ➔ <strong>Servidores de Jogos</strong>.",
-      "Selecione a aba <strong>Favoritos</strong> e clique no <strong>+</strong>.",
-      "Adicione o endereço com a QueryPort:"
+    epicPortNote: "🎮 Porta de Jogo: {port} (Exclusivo Epic)",
+    discordTitle: "Discord Oficial",
+    discordSub: "Suporte, Kits e Registro",
+    discordPerks: [
+      "🎁 <strong>/kit iniciante</strong> grátis",
+      "⚓ <strong>Plataforma oceânica</strong> grátis",
+      "🛡️ <strong>Suporte & avisos</strong> ativos"
     ],
-    favNote: "⚠️ Importante: Após salvar, entre pelo filtro Favorites dentro do ARK.",
-    discordTitle: "Comunidade & Discord",
-    discordSub: "Suporte, Kits e Registro de Tribo",
-    discordDesc: "Registre sua tribo para garantir plataforma oceânica grátis, use comandos como <code>/kit iniciante</code> e tire dúvidas com a administração!",
+    discordBtn: "ENTRAR NO DISCORD",
     copiedSuccess: "Copiado com sucesso para a área de transferência!",
     modalTitle: "⚙️ Configurações do Cluster",
     modalDesc: "Defina o IP público ou domínio DDNS (ex: No-IP, DuckDNS) que os jogadores devem usar para conectar:"
@@ -52,31 +53,32 @@ const I18N = {
   en: {
     clusterStatus: "SERVER ONLINE",
     heroTitlePrefix: "CONNECT TO",
+    heroSub: "Select your platform to join the server",
     steamTitle: "Steam",
-    steamSub: "In-Game Console Connection",
+    steamSub: "Steam Favorites (QueryPort)",
     steamSteps: [
-      "Launch ARK on Steam.",
-      "In the main menu or inside any map, press <kbd>TAB</kbd>.",
-      "Paste the command below and press <kbd>ENTER</kbd>:"
+      "In Steam: <strong>View</strong> ➔ <strong>Game Servers</strong>.",
+      "Go to <strong>Favorites</strong> tab ➔ click the <strong>+</strong> button.",
+      "Paste the address below and click Save:"
     ],
+    steamDirectBtn: "🚀 Open via Steam (1-Click)",
+    steamNote: "📌 Inside ARK: Set server filter to <strong>Favorites</strong> to join.",
     epicTitle: "Epic Games",
     epicSub: "In-Game Console Connection",
     epicSteps: [
       "Launch ARK on Epic Games.",
-      "In the main menu or inside any map, press <kbd>TAB</kbd>.",
+      "In main menu or in-game, press <kbd>TAB</kbd>.",
       "Paste the command below and press <kbd>ENTER</kbd>:"
     ],
-    favTitle: "Steam Favorites List",
-    favSub: "Always accessible inside the game",
-    favSteps: [
-      "In Steam, click <strong>View</strong> ➔ <strong>Game Servers</strong>.",
-      "Select the <strong>Favorites</strong> tab and click <strong>+</strong>.",
-      "Add the address with the QueryPort:"
+    epicPortNote: "🎮 Game Port: {port} (Epic Only)",
+    discordTitle: "Official Discord",
+    discordSub: "Support, Kits & Registration",
+    discordPerks: [
+      "🎁 Free <strong>/kit iniciante</strong>",
+      "⚓ Free <strong>Ocean Platform</strong>",
+      "🛡️ Active <strong>Support & Alerts</strong>"
     ],
-    favNote: "⚠️ Important: After adding, join from the in-game Favorites filter inside ARK.",
-    discordTitle: "Community & Discord",
-    discordSub: "Support, Starter Kits & Tribe Register",
-    discordDesc: "Register your tribe to receive a free Metal Ocean Platform, use commands like <code>/kit iniciante</code> and get support!",
+    discordBtn: "JOIN DISCORD",
     copiedSuccess: "Copied to clipboard successfully!",
     modalTitle: "⚙️ Cluster Settings",
     modalDesc: "Set the public IP or DDNS hostname (e.g. No-IP, DuckDNS) players should use to connect:"
@@ -84,31 +86,32 @@ const I18N = {
   es: {
     clusterStatus: "SERVIDOR EN LÍNEA",
     heroTitlePrefix: "CONECTAR A",
+    heroSub: "Selecciona tu plataforma para unirte al servidor",
     steamTitle: "Steam",
-    steamSub: "Conexión por Consola en el Juego",
+    steamSub: "Favoritos de Steam (QueryPort)",
     steamSteps: [
-      "Abra ARK en Steam.",
-      "En el menú principal o dentro del juego, presione <kbd>TAB</kbd>.",
-      "Pegue el comando de abajo y presione <kbd>ENTER</kbd>:"
+      "En Steam: <strong>Ver</strong> ➔ <strong>Servidores de Juegos</strong>.",
+      "Pestaña <strong>Favoritos</strong> ➔ haz clic en el botón <strong>+</strong>.",
+      "Pega la dirección de abajo y guarda:"
     ],
+    steamDirectBtn: "🚀 Abrir vía Steam (1-Clic)",
+    steamNote: "📌 Dentro de ARK: Selecciona filtro <strong>Favoritos</strong> para entrar.",
     epicTitle: "Epic Games",
     epicSub: "Conexión por Consola en el Juego",
     epicSteps: [
-      "Abra ARK en Epic Games.",
-      "En el menú principal o dentro del juego, presione <kbd>TAB</kbd>.",
-      "Pegue el comando de abajo y presione <kbd>ENTER</kbd>:"
+      "Abre ARK en Epic Games.",
+      "En el menú o dentro del juego, presiona <kbd>TAB</kbd>.",
+      "Pega el comando de abajo y presiona <kbd>ENTER</kbd>:"
     ],
-    favTitle: "Lista de Favoritos",
-    favSub: "Para verlo siempre dentro del juego",
-    favSteps: [
-      "En Steam, haga clic en <strong>Ver</strong> ➔ <strong>Servidores de Juegos</strong>.",
-      "Seleccione la pestaña <strong>Favoritos</strong> y haga clic en <strong>+</strong>.",
-      "Agregue la dirección con la QueryPort:"
+    epicPortNote: "🎮 Puerto de Juego: {port} (Exclusivo Epic)",
+    discordTitle: "Discord Oficial",
+    discordSub: "Soporte, Kits y Registro",
+    discordPerks: [
+      "🎁 <strong>/kit iniciante</strong> gratis",
+      "⚓ <strong>Plataforma oceánica</strong> gratis",
+      "🛡️ <strong>Soporte y avisos</strong> activos"
     ],
-    favNote: "⚠️ Importante: Después de guardar, entre desde la pestaña Favoritos dentro de ARK.",
-    discordTitle: "Comunidad y Discord",
-    discordSub: "Soporte, Kits de Inicio e Registro de Tribu",
-    discordDesc: "¡Registre su tribu para ganar una plataforma oceánica gratis, use comandos como <code>/kit iniciante</code> y resuelva dudas!",
+    discordBtn: "UNIRSE AL DISCORD",
     copiedSuccess: "¡Copiado al portapapeles con éxito!",
     modalTitle: "⚙️ Configuración del Cluster",
     modalDesc: "Defina la IP pública o dominio DDNS (ej: No-IP, DuckDNS) que los jugadores usarán para conectar:"
@@ -135,18 +138,15 @@ function resolveHost() {
 // Inicialização
 document.addEventListener("DOMContentLoaded", () => {
   setupLanguage();
-  setupMapTabs();
   setupSettingsModal();
   setupCopyButtons();
 
-  // Se veio parâmetro de servidor ?server=server2
   const urlParams = new URLSearchParams(window.location.search);
   const serverParam = urlParams.get("server");
   if (serverParam && SERVERS[serverParam]) {
-    switchServer(serverParam);
-  } else {
-    updateDisplay();
+    currentServerId = serverParam;
   }
+  updateDisplay();
 });
 
 // Atualização da Interface
@@ -156,29 +156,30 @@ function updateDisplay() {
   
   // Título e Nomes
   const elPrefix = document.getElementById("txtHeroPrefix");
+  const elSub = document.getElementById("txtHeroSub");
   const elServerName = document.getElementById("txtCurrentServerName");
   if (elPrefix && t && t.heroTitlePrefix) elPrefix.textContent = t.heroTitlePrefix;
+  if (elSub && t && t.heroSub) elSub.textContent = t.heroSub;
   if (elServerName && srv && srv.name) elServerName.textContent = srv.name;
   
-  // Valores de Conexão
-  const consoleCommand = `open ${currentHost}:${srv.gamePort}`;
+  // Endereços
   const favAddress = `${currentHost}:${srv.queryPort}`;
+  const epicCommand = `open ${currentHost}:${srv.gamePort}`;
+  const steamLink = `steam://connect/${currentHost}:${srv.queryPort}`;
 
-  // Atualizar Steam (estilo igual à Epic Games)
-  const inputSteam = document.getElementById("inputSteamCmd");
-  if (inputSteam) inputSteam.value = consoleCommand;
-  const lblSteamPort = document.getElementById("lblSteamPort");
-  if (lblSteamPort) lblSteamPort.textContent = `Porta de Jogo: ${srv.gamePort}`;
+  // Atualizar Steam (Favoritos)
+  const inputSteam = document.getElementById("inputSteamFav");
+  if (inputSteam) inputSteam.value = favAddress;
+  
+  const linkSteam = document.getElementById("linkSteamConnect");
+  if (linkSteam) linkSteam.href = steamLink;
 
-  // Atualizar Epic Games
+  // Atualizar Epic Games (Console)
   const inputEpic = document.getElementById("inputEpicCmd");
-  if (inputEpic) inputEpic.value = consoleCommand;
-  const lblEpicPort = document.getElementById("lblEpicPort");
-  if (lblEpicPort) lblEpicPort.textContent = `Porta de Jogo: ${srv.gamePort}`;
+  if (inputEpic) inputEpic.value = epicCommand;
 
-  // Atualizar Favoritos
-  const inputFav = document.getElementById("inputFavAddr");
-  if (inputFav) inputFav.value = favAddress;
+  const lblEpicPort = document.getElementById("lblEpicPort");
+  if (lblEpicPort) lblEpicPort.textContent = (t.epicPortNote || "🎮 Porta de Jogo: {port}").replace("{port}", srv.gamePort);
 
   // Atualizar Textos de Idioma
   applyTranslations();
@@ -197,29 +198,40 @@ function applyTranslations() {
 
   setTxt("txtClusterStatus", t.clusterStatus);
 
+  // Steam
   setTxt("txtSteamTitle", t.steamTitle);
   setTxt("txtSteamSub", t.steamSub);
   if (t.steamSteps) {
     setTxt("txtSteamSteps", t.steamSteps.map(step => `<li>${step}</li>`).join(""), true);
   }
+  setTxt("lblSteamNote", t.steamNote, true);
 
+  const linkSteam = document.getElementById("linkSteamConnect");
+  if (linkSteam && t.steamDirectBtn) {
+    linkSteam.querySelector("span").textContent = t.steamDirectBtn;
+  }
+
+  // Epic Games
   setTxt("txtEpicTitle", t.epicTitle);
   setTxt("txtEpicSub", t.epicSub);
   if (t.epicSteps) {
     setTxt("txtEpicSteps", t.epicSteps.map(step => `<li>${step}</li>`).join(""), true);
   }
 
-  setTxt("txtFavTitle", t.favTitle);
-  setTxt("txtFavSub", t.favSub);
-  if (t.favSteps) {
-    setTxt("txtFavSteps", t.favSteps.map(step => `<li>${step}</li>`).join(""), true);
-  }
-  setTxt("txtFavNote", t.favNote, true);
-
+  // Discord
   setTxt("txtDiscordTitle", t.discordTitle);
   setTxt("txtDiscordSub", t.discordSub);
-  setTxt("txtDiscordDesc", t.discordDesc, true);
+  if (t.discordPerks) {
+    setTxt("txtDiscordPerks", t.discordPerks.map(p => `<li>${p}</li>`).join(""), true);
+  }
 
+  const btnDiscord = document.getElementById("btnDiscordLink");
+  if (btnDiscord && t.discordBtn) {
+    const span = btnDiscord.querySelector("span");
+    if (span) span.textContent = t.discordBtn;
+  }
+
+  // Modal
   setTxt("txtModalTitle", t.modalTitle);
   setTxt("txtModalDesc", t.modalDesc);
 
@@ -227,27 +239,6 @@ function applyTranslations() {
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === currentLang);
   });
-}
-
-// Tabs de Seleção de Mapa
-function setupMapTabs() {
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const serverId = btn.dataset.server;
-      switchServer(serverId);
-    });
-  });
-}
-
-function switchServer(serverId) {
-  if (!SERVERS[serverId]) return;
-  currentServerId = serverId;
-
-  document.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.server === serverId);
-  });
-
-  updateDisplay();
 }
 
 // Seletor de Idioma
@@ -289,7 +280,7 @@ function setupSettingsModal() {
       currentHost = val;
       localStorage.setItem("ark_cluster_host", val);
       updateDisplay();
-      showToast("Configuração salva com sucesso!");
+      showToast(I18N[currentLang].copiedSuccess || "Salvo com sucesso!");
       modal.classList.remove("active");
     }
   });
@@ -307,9 +298,8 @@ function setupSettingsModal() {
 // Botões de Cópia
 function setupCopyButtons() {
   const copyMap = [
-    { btnId: "btnCopySteam", inputId: "inputSteamCmd" },
-    { btnId: "btnCopyEpic", inputId: "inputEpicCmd" },
-    { btnId: "btnCopyFav", inputId: "inputFavAddr" }
+    { btnId: "btnCopySteam", inputId: "inputSteamFav" },
+    { btnId: "btnCopyEpic", inputId: "inputEpicCmd" }
   ];
 
   copyMap.forEach(({ btnId, inputId }) => {
@@ -364,5 +354,6 @@ function showToast(message) {
   if (toastTimeout) clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => {
     toast.classList.remove("show");
-  }, 2500);
+  }, 2200);
 }
+
