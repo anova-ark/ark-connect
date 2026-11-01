@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=3.6">
+  <link rel="stylesheet" href="style.css?v=3.7">
 </head>
 <body>
   <!-- Ambient background glow effects -->
@@ -35,11 +35,43 @@
       </div>
       
       <div class="header-actions">
-        <!-- Language Switcher -->
+        <!-- Language Switcher with Vector Flags -->
         <div class="lang-switch" id="langSwitch" aria-label="Seletor de idioma">
-          <button type="button" class="lang-btn active" data-lang="pt" id="langPtBtn">🇧🇷 PT</button>
-          <button type="button" class="lang-btn" data-lang="en" id="langEnBtn">🇺🇸 EN</button>
-          <button type="button" class="lang-btn" data-lang="es" id="langEsBtn">🇪🇸 ES</button>
+          <button type="button" class="lang-btn active" data-lang="pt" id="langPtBtn" title="Português">
+            <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
+              <path fill="#009c3b" d="M0 0h640v480H0z"/>
+              <path fill="#ffdf00" d="m320 40 280 200-280 200L40 240z"/>
+              <circle cx="320" cy="240" r="115" fill="#002776"/>
+              <path fill="#fff" d="M210 262a115 115 0 0 1 218-42 120 120 0 0 0-218 42z"/>
+            </svg>
+            <span>PT</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" id="langEnBtn" title="English">
+            <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
+              <path fill="#bd3d44" d="M0 0h640v480H0z"/>
+              <path stroke="#fff" stroke-width="37" d="M0 55.5h640M0 129.5h640M0 203.5h640M0 277.5h640M0 351.5h640M0 425.5h640"/>
+              <path fill="#192f5d" d="M0 0h260v259H0z"/>
+              <g fill="#fff">
+                <circle cx="45" cy="45" r="8"/><circle cx="130" cy="45" r="8"/><circle cx="215" cy="45" r="8"/>
+                <circle cx="87" cy="90" r="8"/><circle cx="172" cy="90" r="8"/>
+                <circle cx="45" cy="135" r="8"/><circle cx="130" cy="135" r="8"/><circle cx="215" cy="135" r="8"/>
+                <circle cx="87" cy="180" r="8"/><circle cx="172" cy="180" r="8"/>
+                <circle cx="45" cy="225" r="8"/><circle cx="130" cy="225" r="8"/><circle cx="215" cy="225" r="8"/>
+              </g>
+            </svg>
+            <span>EN</span>
+          </button>
+          <button type="button" class="lang-btn" data-lang="es" id="langEsBtn" title="Español">
+            <svg class="flag-svg" viewBox="0 0 640 480" width="16" height="12">
+              <path fill="#c60b1e" d="M0 0h640v480H0z"/>
+              <path fill="#ffc400" d="M0 120h640v240H0z"/>
+              <g fill="#c60b1e">
+                <rect x="140" y="195" width="45" height="70" rx="8"/>
+                <circle cx="162.5" cy="182" r="8" fill="#ffc400"/>
+              </g>
+            </svg>
+            <span>ES</span>
+          </button>
         </div>
       </div>
     </div>

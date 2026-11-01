@@ -188,6 +188,7 @@ body {
   padding: 2px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 2px;
 }
 
 .lang-btn {
@@ -195,11 +196,23 @@ body {
   border: none;
   color: var(--text-muted);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--radius-pill);
   cursor: pointer;
   transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.flag-svg {
+  width: 15px;
+  height: 11px;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  display: block;
 }
 
 .lang-btn:hover {
