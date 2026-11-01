@@ -138,7 +138,6 @@ function resolveHost() {
 // Inicialização
 document.addEventListener("DOMContentLoaded", () => {
   setupLanguage();
-  setupSettingsModal();
   setupCopyButtons();
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -231,10 +230,6 @@ function applyTranslations() {
     if (span) span.textContent = t.discordBtn;
   }
 
-  // Modal
-  setTxt("txtModalTitle", t.modalTitle);
-  setTxt("txtModalDesc", t.modalDesc);
-
   // Botões de Idioma
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === currentLang);
@@ -249,49 +244,6 @@ function setupLanguage() {
       localStorage.setItem("ark_lang", currentLang);
       updateDisplay();
     });
-  });
-}
-
-// Modal de Configurações de Host
-function setupSettingsModal() {
-  const modal = document.getElementById("settingsModal");
-  const openBtn = document.getElementById("openSettingsBtn");
-  const closeBtn = document.getElementById("closeSettingsBtn");
-  const inputHost = document.getElementById("inputHostConfig");
-  const saveBtn = document.getElementById("btnSaveHost");
-  const resetBtn = document.getElementById("btnResetHost");
-
-  openBtn.addEventListener("click", () => {
-    inputHost.value = currentHost;
-    modal.classList.add("active");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("active");
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.remove("active");
-  });
-
-  saveBtn.addEventListener("click", () => {
-    const val = inputHost.value.trim();
-    if (val) {
-      currentHost = val;
-      localStorage.setItem("ark_cluster_host", val);
-      updateDisplay();
-      showToast(I18N[currentLang].copiedSuccess || "Salvo com sucesso!");
-      modal.classList.remove("active");
-    }
-  });
-
-  resetBtn.addEventListener("click", () => {
-    currentHost = DEFAULT_PUBLIC_HOST;
-    localStorage.removeItem("ark_cluster_host");
-    inputHost.value = DEFAULT_PUBLIC_HOST;
-    updateDisplay();
-    showToast("Host restaurado para o padrão!");
-    modal.classList.remove("active");
   });
 }
 
